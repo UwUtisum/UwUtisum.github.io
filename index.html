@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Leahs Blog</title>
+  <link rel="stylesheet" href="./style.css">
+  <!-- Original code sampled from https://codepen.io/ioohml/pen/mdvxPKo -->
+</head>
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Goldman:wght@400;700&family=Michroma&family=Orbitron:wght@400;600;800;900&family=Zen+Dots&display=swap" rel="stylesheet">
+
+<section>
+	<div class="dashboard">
+		<div class="window-bar">
+			<p>Information!</p>
+			<button>X</button>
+		</div>
+
+		<div class="profile">
+					<h2 class="title">Leah Kemp</h2>
+					<p class="text">22 year old Self-taught Programmer</p> 
+		</div>
+
+		<div class="tabs">
+			<button class="tab" onclick="openCity(event, 'About Me')">About Me</button>
+			<button class="tab" onclick="openCity(event, 'Satellite Hacking')">Satellite Hacking</button>
+		</div>
+	</div>
+
+	<div id="About Me" class="tabcontent">
+		<div class="item-bar">
+			<h3>About Me</h3>
+			<span onclick="this.parentElement.parentElement.style.display='none'" class="topright">
+				X
+			</span>
+		</div>
+		
+		<div class="inside">
+			<h1>Testing</h1>
+			<br>
+			<img src="https://i.imgur.com/yY5m2DR.png" alt="Github PFP" width="575" height="575">
+		</div>
+	</div>
+
+	<div id="Satellite Hacking" class="tabcontent">
+		<div class="item-bar">
+			<h3>Satellite Hacking</h3>
+			<span onclick="this.parentElement.parentElement.style.display='none'" class="topright">
+				X
+			</span>
+		</div>
+		
+		<div class="inside">
+			<h1>Downloading data straight from weather satilites while in orbit, with 0 internet</h1>
+			just like this image below
+			<img src="https://user-images.githubusercontent.com/35628281/230500228-4eb4169a-360a-4458-884e-c4f81c79f352.png" alt="NOAA-15 IMAGE" width="575" height="425">
+			in mid 2021 i started to look into satilite tapping and satilite communications using Software defined radios
+			<br>
+			<br>
+			this then lead me down a rabbithole that lead me to this youtube video:
+			<iframe width="575" height="315" src="https://www.youtube.com/embed/cjClTnZ4Xh4?si=iL6cyI6xhZK7HqkX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			Thought Emporium dosent go into too much detail about how he processed the data but it peaked my interest none the less,
+			he mentions in the video using a device known as a hackRF this is a good device but for many starters this is overkill,<br><br>
+
+			if you are looking to do somehthing similar i recomend getting a Nooelec brannded SDR as they are much cheaper at only
+			£30-£40 instead of the £300-£400 hackRF<br><br>
+
+			<h1>Meteor weather sat images</h1>
+			<h1>NOAA weather sat images</h1>
+			(this blog post is still a WIP)<br>
+ 		</div>
+	</div>
+</section>
+  <script  src="./script.js"></script>
+</body>
+</html>
