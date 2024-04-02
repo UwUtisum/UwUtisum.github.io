@@ -12,6 +12,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Goldman:wght@400;700&family=Michroma&family=Orbitron:wght@400;600;800;900&family=Zen+Dots&display=swap" rel="stylesheet">
 
+<script src="./oneko.js"></script><!-- screen cat -->
+
 <section>
 	<div class="dashboard">
 		<div class="window-bar">
@@ -20,13 +22,15 @@
 		</div>
 
 		<div class="profile">
-					<h2 class="title">Leah Kemp</h2>
-					<p class="text">22 year old Self-taught Programmer</p> 
+					<h2 class="title">UwUtisum</h2>
+					<p class="text">22 year old Self-taught Programmer</p>
 		</div>
 
 		<div class="tabs">
 			<button class="tab" onclick="openCity(event, 'About Me')">About Me</button>
 			<button class="tab" onclick="openCity(event, 'Satellite Hacking')">Satellite Hacking</button>
+			<button class="tab" onclick="openCity(event, 'Projects i have worked on')">Projects i have worked on</button>
+			<button class="tab" onclick="openCity(event, 'Social Medias')">Social Media's</button>
 		</div>
 	</div>
 
@@ -39,9 +43,23 @@
 		</div>
 		
 		<div class="inside">
-			<h1>Testing</h1>
+			<img src="https://i.imgur.com/yY5m2DR.png" alt="Github PFP" width="200" height="200">
+			<h1>Hi i am leah a 22 year old self Self-taught programer / game developer from the UK</h1>
+			i mostly code in python<br>
+			<img src="./gifs/webpassion.gif" alt="webpassion" height="31" width="88">
+			<img src="./gifs/banner2.gif" alt="banner2" height="31" width="88">
+			<img src="./gifs/animegay.gif" alt="animegay" height="31" width="88">
+			<a title="Trans your gender" target="_blank" href="https://diyhrt.wiki/">
+				<img alt="Trans your gender" decoding="async" height="31" src="./gifs/trans your gender.gif" width="88"></a>
+			<img src="./gifs/made with pride.gif" alt="made with pride" height="31" width="88">
+			<img src="./gifs/kali.png" alt="kali" height="31" width="88">
 			<br>
-			<img src="https://i.imgur.com/yY5m2DR.png" alt="Github PFP" width="575" height="575">
+			<a title="github" target="_blank" href="https://github.com/UwUtisum">
+				<img alt="github" decoding="async" height="31" src="./gifs/github-check.gif" width="88"></a>
+			<a href="https://arciniega.one">
+				<img src="https://arciniega.one/buttons/friends/Chloe/image.png" width="88" height="31" /></a>
+			<a href="https://maia.crimew.gay" target="_blank">
+				<img src="./gifs/maia.crimew.gay.png" alt="maia crimew" title="Maia crimew :3"></a>
 		</div>
 	</div>
 
@@ -69,10 +87,75 @@
 			£30-£40 instead of the £300-£400 hackRF<br><br>
 
 			<h1>Meteor weather sat images</h1>
+			<img src="https://raw.githubusercontent.com/UwUtisum/Meteor-M2-Data-and-Software-I-use/main/Finalimages/2022_07_26_LRPT_19-27-54.s_AMIGOS--rectified.jpg" alt="Meteor IMAGE" width="575" height="1000">
 			<h1>NOAA weather sat images</h1>
 			(this blog post is still a WIP)<br>
  		</div>
 	</div>
+
+	<div id="Projects i have worked on" class="tabcontent">
+		<div class="item-bar">
+			<h3>Projects i have worked on</h3>
+			<span onclick="this.parentElement.parentElement.style.display='none'" class="topright">
+				X
+			</span>
+		</div>
+		
+		<div class="inside">
+			<h1>ME_iON: 2021-2023</h1>
+			ME_iON is a multiplayer shooter game in early accses on steam
+			ME_iON started development in early 2021, i then picked the project back up arround late 2021
+			and in april of 2022 it was releaced onto steam under early accses
+			<iframe src="https://store.steampowered.com/widget/1963590/" frameborder="0" width="575" height="190"></iframe>
+			<h1>Bingle Website: Early 2024</h1>
+			<h1>Anoniion Studios Website: 2023</h1>
+			<h1>BunnyBot: 2019-2021</h1>
+			<img src="https://i.imgur.com/uVddFs5.png" alt="BunnyBot IMAGE" width="575" height="300">
+			<img src="https://i.imgur.com/aHodXMs.png" alt="BunnyBot IMAGE" width="575" height="300">
+			<h1>LUXNET: 2024</h1><br>
+			LUXNET is a python script i developed while learinging about storing data on firebase servers,
+			LUXNET was made purely for educational perposes, while the code is malitios in nature it has been
+			coded in a way that if its full source code is leaked i can remotely wipe the firebase server, rendering
+			the script inoperable<br><br>
+			the source code for LUXNET is publicly avalible on my github<br>
+			LUXNET utilises base64 encodeing and a firebase server to remotely execute commands on the users computer without
+			the user needing to update or download a new script,<br><br>
+			on the github releacse of LUXNET i have removed the base64 codes used to initalise the script making the script inoperable<br><br>
+			if in the unfortunate event that the Base64 codes are leaked i can remotely kill the firebase server to kill the script remotely<br><br>
+			fetures of LUXNET
+			<div>
+				<ul>
+				  <li>RCE on recipients computer</li>
+				  <li>Key logging</li>
+				  <li>IP logging</li>
+				  <li>changes the users desktop background</li>
+				  <li>outputs users full PC specs to a firebase server</li>
+				</ul>
+			  </div>
+			<h1>Firebase Toolkit: 2024</h1>
+			Firebase tookkit is a toolkit i made in python using the module Qt5,
+			the toolkit allows firebase developers to write .Json files directly to firebase servers
+			it also alows developers to backup copys of databases
+			i made this toolkit while learning about storing data on firebase servers, i needed a way to upload data Fast
+			so i developed the firebase toolkit in less than a day
+			<img src="https://i.imgur.com/IlfeBQW.png" alt="firebase Toolkit IMAGE" width="575" height="420">
+			<h1>AECOR: 2017-2019</h1>
+			AECOR was a single player survival game similar to subnaghtica 
+		</div>
+	</div>
+	<div id="Social Medias" class="tabcontent">
+		<div class="item-bar">
+			<h3>Social Media's</h3>
+			<span onclick="this.parentElement.parentElement.style.display='none'" class="topright">
+				X
+			</span>
+		</div>
+		
+		<div class="inside">
+			To be added soon
+		</div>
+	</div>
+	
 </section>
   <script  src="./script.js"></script>
 </body>

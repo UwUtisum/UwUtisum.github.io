@@ -6,15 +6,15 @@
 }
 
 :root {
-	--c-green: #7fff00;
+	--c-green: #9735ff;
 	--c-pink: #6d6d6d;
 	--c-purple: #8a8a8a;
-	--c-lilac: #30dfb9;
-	--c-white: #E8E8E8;
+	--c-lilac: #9735ff;
+	--c-white: #b4b4b4;
 	--c-greenish: #C7FF66;
 	--c-green-neon: #ACFF3F;
-	--c-pinkish: #8e8e8e;
-	--c-light-pink: #696969;
+	--c-pinkish: #633971;
+	--c-light-pink: #7956a4;
 	
 	/* Original Values
 	--c-green: #7fff00;
@@ -29,7 +29,7 @@
 }
 
 body {
-	background: radial-gradient(circle, rgba(232,232,232,1) 0%, rgb(26, 226, 166) 50%, rgb(33, 72, 145) 94%);
+	background: radial-gradient(circle, rgb(0, 89, 167) 0%, rgb(89, 2, 228) 50%, rgb(12, 79, 237) 94%);
 	display: flex;
 	justify-content: center;
 	align-content: center;
