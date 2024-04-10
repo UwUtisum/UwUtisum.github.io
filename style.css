@@ -78,12 +78,7 @@ section {
 }
 
 .title {
-/* 	background-image: radial-gradient(circle, rgba(255,102,193,1) 16%, rgba(246,168,255,1) 44%, rgba(150,138,255,1) 77%); */
 	color: var(--c-pinkish);
-/* 	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	-webkit-text-fill-color: transparent; 
-	-moz-text-fill-color: transparent; */
 	text-shadow: -4px 2px 4px rgba(0, 0, 0, 0.82);
 	font-family: 'Orbitron';
 	line-height: 3rem;

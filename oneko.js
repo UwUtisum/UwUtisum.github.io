@@ -1,25 +1,21 @@
-// oneko.js: https://github.com/adryd325/oneko.js
+// based on oneko.js from https://github.com/adryd325/oneko.js, licensed under MIT, Code taken from https://github.com/nyancrimew/maia.crimew.gay/blob/main/src/static/oneko.js
 
-(function oneko() {
-  const isReducedMotion =
-    window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
-    window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
+}
 
-  if (isReducedMotion) return;
-
+function oneko() {
   const nekoEl = document.createElement("div");
-
-  let nekoPosX = 32;
-  let nekoPosY = 32;
-
-  let mousePosX = 0;
-  let mousePosY = 0;
-
+  let nekoPosX = getRandomInt(32, window.innerWidth - 63);
+  let nekoPosY = getRandomInt(32, window.innerHeight - 63);
+  let mousePosX = nekoPosX - 32;
+  let mousePosY = nekoPosY - 32;
   let frameCount = 0;
   let idleTime = 0;
   let idleAnimation = null;
   let idleAnimationFrame = 0;
-
   const nekoSpeed = 10;
   const spriteSets = {
     idle: [[-3, -3]],
@@ -84,50 +80,25 @@
     ],
   };
 
-  function init() {
+  function create() {
     nekoEl.id = "oneko";
-    nekoEl.ariaHidden = true;
     nekoEl.style.width = "32px";
     nekoEl.style.height = "32px";
     nekoEl.style.position = "fixed";
     nekoEl.style.pointerEvents = "none";
+    nekoEl.style.backgroundImage = "url('oneko.gif')";
     nekoEl.style.imageRendering = "pixelated";
-    nekoEl.style.left = `${nekoPosX - 16}px`;
-    nekoEl.style.top = `${nekoPosY - 16}px`;
-    nekoEl.style.zIndex = Number.MAX_VALUE;
-
-    let nekoFile = "./oneko.gif"
-    const curScript = document.currentScript
-    if (curScript && curScript.dataset.cat) {
-      nekoFile = curScript.dataset.cat
-    }
-    nekoEl.style.backgroundImage = `url(${nekoFile})`;
+    nekoEl.style.left = `${nekoPosX}px`;
+    nekoEl.style.top = `${nekoPosY}px`;
 
     document.body.appendChild(nekoEl);
 
-    document.addEventListener("mousemove", function (event) {
+    document.onmousemove = (event) => {
       mousePosX = event.clientX;
       mousePosY = event.clientY;
-    });
+    };
 
-    window.requestAnimationFrame(onAnimationFrame);
-  }
-
-  let lastFrameTimestamp;
-
-  function onAnimationFrame(timestamp) {
-    // Stops execution if the neko element is removed from DOM
-    if (!nekoEl.isConnected) {
-      return;
-    }
-    if (!lastFrameTimestamp) {
-      lastFrameTimestamp = timestamp;
-    }
-    if (timestamp - lastFrameTimestamp > 100) {
-      lastFrameTimestamp = timestamp
-      frame()
-    }
-    window.requestAnimationFrame(onAnimationFrame);
+    window.onekoInterval = setInterval(frame, 100);
   }
 
   function setSprite(name, frame) {
@@ -144,11 +115,7 @@
     idleTime += 1;
 
     // every ~ 20 seconds
-    if (
-      idleTime > 10 &&
-      Math.floor(Math.random() * 200) == 0 &&
-      idleAnimation == null
-    ) {
+    if (idleTime > 10 && true && idleAnimation == null) {
       let avalibleIdleAnimations = ["sleeping", "scratchSelf"];
       if (nekoPosX < 32) {
         avalibleIdleAnimations.push("scratchWallW");
@@ -164,7 +131,7 @@
       }
       idleAnimation =
         avalibleIdleAnimations[
-          Math.floor(Math.random() * avalibleIdleAnimations.length)
+        Math.floor(Math.random() * avalibleIdleAnimations.length)
         ];
     }
 
@@ -218,7 +185,6 @@
       return;
     }
 
-    let direction;
     direction = diffY / distance > 0.5 ? "N" : "";
     direction += diffY / distance < -0.5 ? "S" : "";
     direction += diffX / distance > 0.5 ? "W" : "";
@@ -235,5 +201,10 @@
     nekoEl.style.top = `${nekoPosY - 16}px`;
   }
 
-  init();
-})();
+  create();
+};
+
+const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+if (!isReduced) {
+  oneko();
+}
